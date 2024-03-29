@@ -37,8 +37,8 @@ body {
     background:rgba(0, 0, 0, 0.377);
     --bs-btn-border-color: rgba(255, 255, 255, 0.24);
     --bs-btn-hover-color: black;
-    --bs-btn-hover-bg: #ffffffea;
-    --bs-btn-hover-border-color: white;
+    --bs-btn-hover-bg: rgba(255, 255, 255, 0.664);
+    --bs-btn-hover-border-color: black;
     --bs-btn-focus-shadow-rgb: 25, 135, 84;
     --bs-btn-active-color: black;
     --bs-btn-active-bg: white;
@@ -50,6 +50,11 @@ body {
 
 .carousel{
     background-color: rgba(0, 0, 0, 0.377);
+}
+
+.carousel-item img{
+    height: 593px;
+
 }
 
 .carousel-caption {
@@ -83,4 +88,32 @@ body {
 .carousel-caption button:hover{
     background: rgba(255, 255, 255, 0.664);
     color:black;
+}
+
+.welcome{
+    margin-top: 40px;
+}
+.welcome button{
+
+    display: block;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.815);
+    color:white;
+    font-weight: 700;
+    
+}
+
+.welcome button:hover{
+    background: rgba(255, 255, 255, 0.664);
+    color:black;
+}
+
+.welcome p{
+    width: 40%; /* Adjust the width as needed */
+    margin: 0 auto; 
+    padding: 10px; /* Add some padding for spacing */
+    border: 1px solid rgba(0, 0, 0, 0.37); /* Add border for the box */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    color: black;
+    text-align: justify;
 }
