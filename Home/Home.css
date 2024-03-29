@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+/*for poppin font  (import or link)*/
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 40px;
+    aspect-ratio: auto 40 / 40;
+    height: 40px;
+}
+
+.navbar-brand span{
+    margin-left: 5px;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons i{
+    margin-right: 30px;
+    color: white;
+}
+
+.btn-outline-success {
+    --bs-btn-color: white;
+    background:rgba(0, 0, 0, 0.377);
+    --bs-btn-border-color: rgba(255, 255, 255, 0.24);
+    --bs-btn-hover-color: black;
+    --bs-btn-hover-bg: #ffffffea;
+    --bs-btn-hover-border-color: white;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: black;
+    --bs-btn-active-bg: white;
+    --bs-btn-active-border-color: white;}
+
+/*.form-control {
+    box-shadow: #000;
+}*/
+
+.carousel{
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.25);
+    margin-bottom: 75px;
+    width: 100%;
+    margin-left: -200px;
+}
+
+.carousel-caption.slider3{
+    color: black;
+}
+
+.carousel-caption button{
+    background: white;
+}
