@@ -3,6 +3,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background: #d3d3d3b0;
 }
 
 /*NAVIGATION BAR*/
@@ -117,6 +118,63 @@ body {
     text-align: justify;
 }
 
+/* *POPULAR PRODUCTS*/
+
+.popular-products {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.popular-products-box .popular-products-title {
+    margin: 50px 0;
+    color: black;
+    text-align: center;
+}
+
+.popular-products-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.popular-products-items .popular-products-item {
+    padding: 20px;
+    margin: 30px 30px 300px 30px;     /*top right bottom left*/
+    height: 300px;
+}
+
+.popular-products-items .popular-products-item .popular-products-image img {
+    width: 200px;
+    height: 300px;
+}
+
+.popular-products-items .popular-products-item .popular-products-body {
+    margin-top: 15px;
+}
+
+.popular-products-items .popular-products-item .popular-products-body h6 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: black;
+    text-decoration: underline #d3d3d3;
+}
+
+.popular-products-items .popular-products-item .popular-products-body h6:hover{
+    text-decoration: underline black;
+}
+
+.popular-products-items .popular-products-item .popular-products-body .price label {
+    font-size: 15px;
+    color: black;
+}
+
+.popular-products-items .popular-products-item .popular-products-body .price label.sale {
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: line-through;
+    color: rgb(85, 84, 84);
+}
 
 /* *FOOTER*/
 
@@ -141,7 +199,7 @@ body {
 .footer-box .footer-i h5{
     color: black;
     margin-bottom: 30px;    
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .footer-box .footer-i label{
@@ -183,9 +241,12 @@ body {
     position: relative;
     right: 8px;
     background: rgba(255, 255, 255, 0.329);
-    outline: black;
-    border: none;
+    border:none;
     cursor: pointer;
+}
+
+.footer-box .footer-i.f3 button:hover{
+    background: rgba(255, 255, 255, 0.582);
 }
 
 .footer-box .footer-i.f3 .social-media{
@@ -204,62 +265,4 @@ body {
 .footer-box .footer-i.f3 .social-media a i:hover{
     background: white;
     color:black;
-}
-
-/* *POPULAR PRODUCTS*/
-
-.popular-products {
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.popular-products-box .popular-products-title {
-    margin: 50px 0;
-    color: black;
-    text-align: center;
-}
-
-.popular-products-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.popular-products-items .popular-products-item {
-    padding: 20px;
-    margin: 30px 30px 300px 30px;     /*top right bottom left*/
-    height: 300px;
-}
-
-.popular-products-items .popular-products-item .popular-products-image img {
-    width: 200px;
-    height: 300px;
-}
-
-.popular-products-items .popular-products-item .popular-products-body {
-    margin-top: 15px;
-}
-
-.popular-products-items .popular-products-item .popular-products-body h6 {
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: black;
-    text-decoration: underline white;
-}
-
-.popular-products-items .popular-products-item .popular-products-body h6:hover{
-    text-decoration: underline black;
-}
-
-.popular-products-items .popular-products-item .popular-products-body .price label {
-    font-size: 15px;
-    color: black;
-}
-
-.popular-products-items .popular-products-item .popular-products-body .price label.sale {
-    display: inline-block;
-    margin-right: 5px;
-    text-decoration: line-through;
-    color: rgb(85, 84, 84);
 }

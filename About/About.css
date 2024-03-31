@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+/*for poppin font  (import or link)*/
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #d3d3d3b0;
+}
+
+
+/*NAVIGATION BAR*/
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 38px;
+    height: 35px;
+    border-radius: 50px;
+}
+
+.navbar-brand span{
+    margin-left: 5px;
+    font-weight:bolder;
+    text-shadow: 2px 2px 2px black;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons i{
+    margin-right: 30px;
+    color: white;
+}
+
+.btn-outline-success {
+    --bs-btn-color: white;
+    background:rgba(0, 0, 0, 0.377);
+    --bs-btn-border-color: rgba(255, 255, 255, 0.24);
+    --bs-btn-hover-color: black;
+    --bs-btn-hover-bg: rgba(255, 255, 255, 0.664);
+    --bs-btn-hover-border-color: black;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: black;
+    --bs-btn-active-bg: white;
+    --bs-btn-active-border-color: white;
+}
+
+/* *INTERFACE*/
+.content {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+    background-image: url("/About/images/main-image.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.content-box {
+    position: relative;
+    margin-top: 32%;
+}
+
+.content-box h1 {
+    font-weight: 700;
+    font-size: 70px;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+}
+
+.about{
+    padding: 170px 180px 0px 180px;
+    text-align: justify;
+}
+
+/*TEAM MEMBER GRID*/
+.container h1{
+    margin: 150px 0px;
+}
+
+.container h5{
+    padding: 10px;
+    font-weight: 400;
+}
+
+.container label{
+    color: #3b3b3b;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+/*SERVICES*/
+.our-services-box .our-services-item .our-services-icon{
+   /* padding: 27px 0px;
+    box-shadow: #114232 0px 10px 70px;
+    background: #114232;
+    border-radius: 10px;*/
+    font-size: 50px;
+    color: black;
+    transition: all .4s ease-in-out;
+    margin-bottom: 35px;
+}
+
+/* *FOOTER*/
+
+.footer{
+    padding: 50px 90px;
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 220px;
+}
+
+.footer-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);   
+    flex-wrap: wrap;
+}
+
+.footer-box .footer-i{
+    margin: 50px;
+}
+
+.footer-box .footer-i h5{
+    color: black;
+    margin-bottom: 30px;    
+    font-weight: 500;
+}
+
+.footer-box .footer-i label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: white;
+}
+
+.footer-box .footer-i label a{
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.footer-box .footer-i.f3{
+    position: relative;
+    top: 45px;
+}
+
+.footer-box .footer-i.f3 label{
+    width: 400px;
+    display: block;
+    line-height: 22px;
+}
+
+.footer-box .footer-i.f3 input{
+    display: inline-block;
+    margin-top: 20px;
+    width: 300px;
+    padding: 12px 30px;
+    border: none;
+    outline: none;
+}
+
+.footer-box .footer-i.f3 button{
+    padding: 12px;
+    position: relative;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.329);
+    border:none;
+    cursor: pointer;
+}
+
+.footer-box .footer-i.f3 button:hover{
+    background: rgba(255, 255, 255, 0.582);
+}
+
+.footer-box .footer-i.f3 .social-media{
+    margin-top: 30px;
+}
+
+.footer-box .footer-i.f3 .social-media a i{
+    color: white;
+    margin-right: 10px;
+    font-size: 19px;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+    padding: 13px;
+}
+
+.footer-box .footer-i.f3 .social-media a i:hover{
+    background: white;
+    color:black;
+}
+
