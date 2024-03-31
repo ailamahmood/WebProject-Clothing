@@ -87,6 +87,16 @@ body {
     color:black;
 }
 
+/*MODAL IMAGE*/
+.modal-content img {
+    width: 100%; /* Adjust the width to fit the modal */
+}
+
+/* Increase modal size */
+.modal-dialog {
+    max-width: 95%; /* Adjust the maximum width of the modal */
+}
+
 /*WELCOME TOGGLE BUTTON*/
 .welcome{
     margin: 40px 0px;
@@ -100,12 +110,6 @@ body {
     font-weight: 600;
     text-shadow: 2px 2px 2px black;
     
-}
-
-.welcome button:hover{
-    background: rgba(255, 255, 255, 0.664);
-    color:black;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.137);
 }
 
 .welcome p{
