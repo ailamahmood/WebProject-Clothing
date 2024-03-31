@@ -99,13 +99,15 @@ body {
     margin: 20px auto;
     background: rgba(0, 0, 0, 0.815);
     color:white;
-    font-weight: 700;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px black;
     
 }
 
 .welcome button:hover{
     background: rgba(255, 255, 255, 0.664);
     color:black;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.137);
 }
 
 .welcome p{
@@ -116,4 +118,93 @@ body {
     border-radius: 8px; /* Optional: Add rounded corners */
     color: black;
     text-align: justify;
+}
+
+
+/* *FOOTER*/
+
+.footer{
+    padding: 50px 90px;
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+}
+
+.footer-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);   
+    flex-wrap: wrap;
+}
+
+.footer-box .footer-i{
+    margin: 50px;
+}
+
+.footer-box .footer-i h5{
+    color: black;
+    margin-bottom: 30px;    
+    font-weight: 600;
+}
+
+.footer-box .footer-i label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: white;
+}
+
+.footer-box .footer-i label a{
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.footer-box .footer-i.f3{
+    position: relative;
+    top: 45px;
+}
+
+.footer-box .footer-i.f3 label{
+    width: 400px;
+    display: block;
+    line-height: 22px;
+}
+
+.footer-box .footer-i.f3 input{
+    display: inline-block;
+    margin-top: 20px;
+    width: 300px;
+    padding: 12px 30px;
+    border: none;
+    outline: none;
+}
+
+.footer-box .footer-i.f3 button{
+    padding: 12px;
+    position: relative;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.329);
+    outline: black;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-box .footer-i.f3 .social-media{
+    margin-top: 30px;
+}
+
+.footer-box .footer-i.f3 .social-media a i{
+    color: white;
+    margin-right: 10px;
+    font-size: 19px;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+    padding: 13px;
+}
+
+.footer-box .footer-i.f3 .social-media a i:hover{
+    background: white;
+    color:black;
 }
