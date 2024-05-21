@@ -89,18 +89,18 @@ body {
 
 /*MODAL IMAGE*/
 .modal-content img {
-    width: 100%; /* Adjust the width to fit the modal */
+    width: 100%;
 }
 
-/* Increase modal size */
 .modal-dialog {
-    max-width: 95%; /* Adjust the maximum width of the modal */
+    max-width: 90%;       /* Adjust the maximum width of the modal */
 }
 
 /*WELCOME TOGGLE BUTTON*/
 .welcome{
-    margin: 40px 0px;
+    margin: 80px 0 150px 0;
 }
+
 .welcome button{
 
     display: block;
@@ -122,70 +122,101 @@ body {
     text-align: justify;
 }
 
-/* *POPULAR PRODUCTS*/
+/* *POPULAR PRODUCTS AND MOST-RATED PRODUCTS*/
 
-.popular-products {
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.popular-products-box .popular-products-title {
-    margin: 50px 0;
+.products-title {
+    margin: 0 0 50px 0;
     color: black;
     text-align: center;
 }
 
-.popular-products-items {
+.products-items {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.popular-products-items .popular-products-item {
-    padding: 20px;
-    margin: 30px 30px 300px 30px;     /*top right bottom left*/
+.products-item {
+    padding: 30px;
+    margin: 30px 0px 380px 0px;     /*top right bottom left*/
     height: 300px;
 }
 
-.popular-products-items .popular-products-item .popular-products-image img {
-    width: 200px;
-    height: 300px;
+.products-image img {
+    width: 270px;
+    height: 400px;
 }
 
-.popular-products-items .popular-products-item .popular-products-body {
+.products-body {
     margin-top: 15px;
 }
 
-.popular-products-items .popular-products-item .popular-products-body h6 {
+.products-body h6 {
     font-weight: 500;
     margin-bottom: 5px;
     color: black;
     text-decoration: underline #d3d3d3;
 }
 
-.popular-products-items .popular-products-item .popular-products-body h6:hover{
+ .popular-products-body h6:hover{
     text-decoration: underline black;
 }
 
-.popular-products-items .popular-products-item .popular-products-body .price label {
+ .price label {
     font-size: 15px;
     color: black;
 }
 
-.popular-products-items .popular-products-item .popular-products-body .price label.sale {
+ .price label.sale {
     display: inline-block;
     margin-right: 5px;
     text-decoration: line-through;
     color: rgb(85, 84, 84);
 }
 
+ .rate-icons i {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* *DISCOUNT NEWS*/
+.discount-news {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.986);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 250px;
+}
+
+.discount-news-content {
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    line-height: 59px;
+    font-size: 22px;
+   
+    margin-left: 80px;
+}
+
+.discount-news-content b{
+    font-weight: 500;
+}
+
+.discount-news-image img {
+    width: 320px;
+    height: 240px;
+    margin-right: 80px;
+}
+
 /* *FOOTER*/
 
 .footer{
     padding: 50px 90px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     margin-top: 20px;
+    position: relative;
 }
 
 .footer-box{
@@ -201,7 +232,7 @@ body {
 }
 
 .footer-box .footer-i h5{
-    color: black;
+    color: white;
     margin-bottom: 30px;    
     font-weight: 500;
 }
@@ -269,4 +300,16 @@ body {
 .footer-box .footer-i.f3 .social-media a i:hover{
     background: white;
     color:black;
+}
+
+.footer-copyright {
+    background: black;
+    color: white;
+    padding: 10px 0;
+    position: absolute; /* Change this line */
+    bottom: 0; /* Add this line */
+    left: 0; /* Add this line */
+    width: 100%; /* Add this line */
+    text-align: center; /* Add this line */
+    font-size: 16px;
 }

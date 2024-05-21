@@ -53,7 +53,7 @@ body {
 
 .bg-img {
 
-    background-image: url("/Contact/images/Contact-w.jpeg");
+    background-image: url("images/Contact-w.jpeg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@ margin-bottom: 5px;
 .footer {
     padding: 50px 90px;
     background: rgba(0, 0, 0, 0.8);
-
+    position: relative;
 }
 
 .footer-box {
@@ -246,4 +246,16 @@ margin-bottom: 5px;
 .footer-box .footer-i.f3 .social-media a i:hover {
     background: white;
     color: black;
+}
+
+.footer-copyright {
+    background: black;
+    color: white;
+    padding: 10px 0;
+    position: absolute; /* Change this line */
+    bottom: 0; /* Add this line */
+    left: 0; /* Add this line */
+    width: 100%; /* Add this line */
+    text-align: center; /* Add this line */
+    font-size: 16px;
 }

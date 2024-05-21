@@ -10,14 +10,15 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Home CSS-->
     <link rel="stylesheet" href="Home.css">
+    <!--Font awesome library-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <!--Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Home JS-->
     <script src="Home.js"></script>
 
 
@@ -26,15 +27,17 @@
 
 <body>
 
+    <!-- NAVIGATION BAR-->
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
 
+            <!--BRAND LOGO AND NAME-->
             <a class="navbar-brand" href="#">
-                <img src="/Home/images/logo2.png" alt="Logo" width="30" height="24"
-                    class="d-inline-block align-text-top">
+                <img src="images/logo2.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 <span>Bazeena</span>
             </a>
 
+            <!--COLLAPSE MENU ON MINIMIZE FOR RESPONSIVE-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -43,15 +46,19 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!--HOME, CONTACT , ABOUT-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Home/Home.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../Home/Home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Contact/Contact.html">Contact</a>
+                        <a class="nav-link" href="../Contact/Contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/About/About.html">About</a>
+                        <a class="nav-link" href="../About/About.html">About</a>
                     </li>
+
+                    <!--DROPDOWN MENU-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -64,12 +71,14 @@
                     </li>
                 </ul>
 
+                <!--NAVBAR ICONS-->
                 <span class="icons">
                     <a href="#"><i class="fa-solid fa-cart-shopping" href="#"></i></a>
                     <a href="#"><i class="fa-solid fa-heart" href="#"></i></a>
                     <a href="#"><i class="fa-solid fa-user"></i></a>
                 </span>
 
+                <!--SEARCH-->
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-search"></i></button>
@@ -80,36 +89,40 @@
     </nav>
 
 
+    <!--CAROUSEL/SLIDER-->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 
-
-            <div class="carousel-item active" data-bs-interval="4000">
-                <img src="/Home/images/Main-w1.jpeg" class="d-block w-100" alt="Women collection">
+            <!--CAROUSEL IMAGES 1-4 AND CAPTIONS-->
+            <div class="carousel-item active" data-bs-interval="4000"> <!--data-bs-interval= TIME ON ONE IMAGE-->
+                <img src="images/Main-w1.jpeg" class="d-block w-100" alt="Women collection">
                 <div class="carousel-caption d-none d-md-block slider1" id="this">
                     <h1>Elegance Redefined</h1>
                     <h5>Discover timeless styles crafted for the modern woman</h5>
                     <a href="#"><button type="button" class="btn btn-outline-dark 1">Shop Now</button></a>
                 </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="4000">
-                <img src="/Home/images/Main-w2.jpeg" class="d-block w-100" alt="Women collection">
+                <img src="images/Main-w2.jpeg" class="d-block w-100" alt="Women collection">
                 <div class="carousel-caption d-none d-md-block slider2" id="this">
                     <h1>Effortlessly Chic</h1>
                     <h5>Elevate your wardrobe with our curated selection of essentials</h5>
                     <a href="#"><button type="button" class="btn btn-outline-dark 2">Shop Now</button></a>
                 </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="4000">
-                <img src="/Home/images/Main-w3.jpeg" class="d-block w-100" alt="Women collection">
+                <img src="images/Main-w3.jpeg" class="d-block w-100" alt="Women collection">
                 <div class="carousel-caption d-none d-md-block slider3" id="this">
                     <h1>Bold and Beautiful</h1>
                     <h5>Embrace confidence with our latest collection for women</h5>
                     <a href="#"><button type="button" class="btn btn-outline-dark 3">Shop Now</button></a>
                 </div>
             </div>
+
             <div class="carousel-item" data-bs-interval="4000">
-                <img src="/Home/images/Main-m1.jpeg" class="d-block w-100" alt="Men collection">
+                <img src="images/Main-m1.jpeg" class="d-block w-100" alt="Men collection">
                 <div class="carousel-caption d-none d-md-block  slider4" id="this">
                     <h1>Sleek Sophistication</h1>
                     <h5>Explore sleek designs tailored for the discerning gentleman</h5>
@@ -117,6 +130,8 @@
                 </div>
             </div>
         </div>
+
+        <!--PREVIOUS/NEXT BUTTONS-->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -130,6 +145,7 @@
 
     </div>
 
+    <!--MODAL IMAGE ON CLICK-->
     <div id="myModal" class="modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -144,6 +160,7 @@
         </div>
     </div>
 
+    <!--WELCOME BUTTON FOR TOGGLE-->
     <div class="welcome">
         <button type="button" class="btn btn-outline-dark w">Hear the Welcome Chime</button>
 
@@ -155,101 +172,195 @@
         </p>
     </div>
 
-
+    <!--POPULAR PRODUCTS-->
     <div class="popular-products" id="products">
-        <div class="popular-products-box">
-            <div class="popular-products-title">
-                <h2>OUR POPULAR PRODUCTS</h2>
-            </div>
 
-            <div class="popular-products-items">
-                <div class="popular-products-item">
-                    <div class="popular-products-image">
-                        <img src="/Home/images/PP1.jpeg">
-                    </div>
-                    <div class="popular-products-body">
-                        <a href="#">
-                            <h6>Embroided Suit</h6>
-                        </a>
-                        <div class="price">
-                            <label class="sale">PKR 13,000</label>
-                            <label>PKR 8,300</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="popular-products-item">
-                    <div class="popular-products-image">
-                        <img src="/Home/images/PP2.jpeg">
-                    </div>
-                    <div class="popular-products-body">
-                        <a href="#">
-                            <h6>Embroided Top</h6>
-                        </a>
-                        <div class="price">
-                            <label class="sale">PKR 4,999</label>
-                            <label>PKR 3,999</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="popular-products-item">
-                    <div class="popular-products-image">
-                        <img src="/Home/images/PP3.jpeg">
-                    </div>
-                    <div class="popular-products-body">
-                        <a href="#">
-                            <h6>Kurta Pajama</h6>
-                        </a>
-                        <div class="price">
-                            <label class="sale">PKR 10,500</label>
-                            <label>PKR 8,500</label>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="products-title">
+            <h2>OUR POPULAR PRODUCTS</h2>
         </div>
 
-
-
-        <div class="footer">
-            <div class="footer-box">
-                <div class="footer-i f1">
-                    <h5>Contact</h5>
-                    <label>Sector: 4 Jinnah Avenue, F 8/4 F-8</label><br>
-                    <label>City: Islamabad</label><br>
-                    <label>Country: Pakistan</label><br>
-                    <label>Zip Code: 44220</label><br>
-                    <label>Phone: 051-3719183</label><br>
+        <div class="products-items">
+            <div class="products-item">
+                <div class="products-image">
+                    <img src="images/PP1.jpeg">
                 </div>
-
-                <div class="footer-i f2">
-                    <h5>Services</h5>
-                    <label><a href="#">Ordering & Payment</a></label><br>
-                    <label><a href="#">Customer Review</a></label><br>
-                    <label><a href="#">Return/Cancellation</a></label><br>
-                    <label><a href="#">Frequently Asked Questions</a></label><br>
-                    <label><a href="#">Terms and Conditions</a></label><br>
-                </div>
-
-                <div class="footer-i f3">
-                    <h5>Bazeena Clothing</h5>
-                    <label>Elevate your wardrobe with Bazeena Clothing, where every stitch tells a story of elegance and
-                        individuality. Discover your signature style today</label><br>
-                    <input type="email" placeholder="Email Address">
-                    <button id="emailButton"><i class="fa-solid fa-share"></i></button>
-                    <div class="social-media">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <div class="products-body">
+                    <a href="#">
+                        <h6>Embroided Suit</h6>
+                    </a>
+                    <div class="price">
+                        <label class="sale">PKR 13,000</label>
+                        <label>PKR 8,300</label>
                     </div>
                 </div>
+            </div>
 
+            <div class="products-item">
+                <div class="products-image">
+                    <img src="images/PP2.jpeg">
+                </div>
+                <div class="products-body">
+                    <a href="#">
+                        <h6>Embroided Top</h6>
+                    </a>
+                    <div class="price">
+                        <label class="sale">PKR 4,999</label>
+                        <label>PKR 3,999</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-item">
+                <div class="products-image">
+                    <img src="images/PP3.jpeg">
+                </div>
+                <div class="products-body">
+                    <a href="#">
+                        <h6>Roshan WaistCoat</h6>
+                    </a>
+                    <div class="price">
+                        <label class="sale">PKR 10,500</label>
+                        <label>PKR 8,500</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--TOP RATED PRODUCTS-->
+    <div class="most-rated">
+        <div class="products-title">
+            <h2>MOST RATED</h2>
+        </div>
+
+        <div class="products-items">
+            <div class="products-item">
+                <div class="products-image">
+                    <img src="images/MR3.jpeg">
+                </div>
+                <div class="products-body">
+                    <a href="#">
+                        <h6>Embroided Kurti</h6>
+                    </a>
+                    <div class="rate-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="price">
+                        <label class="sale">$89.99</label>
+                        <label>$49.99</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-item">
+                <div class="products-image">
+                    <img src="images/MR2.jpeg">
+                </div>
+                <div class="products-body">
+                    <a href="#">
+                        <h6>Kurta Pajama</h6>
+                    </a>
+                    <div class="rate-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="price">
+                        <label class="sale">$89.99</label>
+                        <label>$49.99</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-item">
+                <div class="products-image">
+                    <img src="images/MR1.jpeg">
+                </div>
+                <div class="products-body">
+                    <a href="#">
+                        <h6>Embroided Suit</h6>
+                    </a>
+                    <div class="rate-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="price">
+                        <label class="sale">$89.99</label>
+                        <label>$49.99</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--DISCOUNT-->
+    <div class="discount-news" id="news">
+
+        <div class="discount-news-content">
+            Wrap up the season in style with our <b>End-of-Season Discounts
+                <br>Shop now</b> and steal amazing deals before they're gone!
+        </div>
+        <div class="discount-news-image">
+            <img src="images/discount3.png">
+        </div>
+
+    </div>
+
+    <!--FOOTER-->
+    <div class="footer">
+        <div class="footer-box">
+            <div class="footer-i f1">
+                <h5>Contact</h5>
+                <label>Sector: 4 Jinnah Avenue, F 8/4 F-8</label><br>
+                <label>City: Islamabad</label><br>
+                <label>Country: Pakistan</label><br>
+                <label>Zip Code: 44220</label><br>
+                <label>Phone: 051-3719183</label><br>
+            </div>
+
+            <div class="footer-i f2">
+                <h5>Services</h5>
+                <label><a href="#">Ordering & Payment</a></label><br>
+                <label><a href="#">Customer Review</a></label><br>
+                <label><a href="#">Return/Cancellation</a></label><br>
+                <label><a href="#">Frequently Asked Questions</a></label><br>
+                <label><a href="#">Terms and Conditions</a></label><br>
+            </div>
+
+            <div class="footer-i f3">
+                <h5>Bazeena Clothing</h5>
+                <label>Elevate your wardrobe with Bazeena Clothing, where every stitch tells a story of elegance and
+                    individuality. Discover your signature style today</label><br>
+                <input type="email" placeholder="Email Address">
+                <button id="emailButton"><i class="fa-solid fa-share"></i></button>
+                <div class="social-media">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                &copy; 2024 Bazeena - All rights reserved
             </div>
         </div>
+    </div>
+
+
 
 </body>
 
