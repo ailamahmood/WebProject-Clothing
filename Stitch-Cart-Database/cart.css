@@ -51,30 +51,30 @@ body {
     font-size: 17px;
 }
 .nav-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from navbar */
-    position: relative; /* Needed for the underline effect */
+    text-decoration: none; 
+    color: inherit; 
+    position: relative; 
   }
 .nav-link:not(.dropdown-toggle):after { /* Create the underline effect */
     content: "";
     position: absolute;
-    width: 100%; /* Span the entire width of the link */
-    height: 2px; /* Set the underline height */
-    bottom: -2px; /* Position the underline at the bottom */
+    width: 100%; 
+    height: 2px; 
+    bottom: -2px; 
     left: 0;
-    background-color: rgb(3, 113, 117);; /* Set underline color to green */
-    opacity: 0; /* Initially hide the underline */
-    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+    background-color: rgb(3, 113, 117);
+    opacity: 0; 
+    transition: opacity 0.2s ease-in-out; 
   }
   
-  .nav-link:hover:after, /* Show underline on hover */
-  .nav-link.active:after { /* Show underline on click (active state) */
-    opacity: 1; /* Make the underline visible */
+  .nav-link:hover:after, 
+  .nav-link.active:after { 
+    opacity: 1; 
   }
 
 .btn-outline-success {
     --bs-btn-color: white;
-    background:rgba(0, 0, 0, 0.377);
+    background: rgba(0, 0, 0, 0.377);
     --bs-btn-border-color: rgba(255, 255, 255, 0.24);
     --bs-btn-hover-color: black;
     --bs-btn-hover-bg: rgba(255, 255, 255, 0.664);
@@ -85,88 +85,189 @@ body {
     --bs-btn-active-border-color: white;
 }
 
-/* *INTERFACE*/
-
-.content {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    flex-direction: column;
-    background-image: url("images/main-image.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+/* Global Styles */
+.container-fluid {
+  padding: 15px;
 }
 
-.content-box {
-    position: relative;
-    margin-top: 32%;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.content-box h1{
-    font-size: 36px;
-    margin-top: 150px;
-    color: #333;
-    background: hsl(0, 0%, 100%);
-    text-align: center;
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
-.about{
-    line-height: 1.5;
-    color: #666;
-    font-size: 20px;
-    color: #333;
-    padding-left: 150px;
-    padding-right: 150px;
-    text-align: center;
-    margin-top: 100px;
+.col-md-8 {
+  flex: 0 0 66.67%;
+  max-width: 66.67%;
+  margin-left: -50px;
 }
 
-/*TEAM MEMBER GRID*/
-
-.container h1{
-    padding-top: 50px;
+.col-md-4 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
 }
 
-.container h5{
-    padding: 10px;
-    font-weight: 400;
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
 }
 
-.container label{
-    color: #3b3b3b;
-    font-weight: 300;
-    font-size: 15px;
+.card-body {
+  padding: 15px;
 }
 
-.container button{
-    padding: 10px;
-    display: block;
-    margin: 50px auto;
-    background: rgba(39, 39, 39, 0.815);
-    color:white;
-    font-weight: 500;
-    border-radius: 5px;
-    margin-top: 25px;
+/* Product Image Styles */
+.img-fluid {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
-.container button:hover{
-    background: rgb(0, 89, 95);
-    color:rgba(255, 255, 255, 0.9);
+/* Product Details Styles */
+h3 {
+  margin-top: 10px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-right: 1050px;
 }
 
-/*SERVICES*/
-.our-services-box .our-services-item .our-services-icon{
-    font-size: 35px;
-    color: rgb(22, 22, 22);
-    transition: all .4s ease-in-out;
-    margin-top: 27px;
-    margin-bottom: 15px;
+h5 {
+  font-weight: 500;
+  font-size: large;
+  margin-bottom: 15px;
 }
 
+h6 {
+  font-weight: 500;
+  font-size: medium;
+}
+
+p {
+  margin-bottom: 10px;
+  font-weight: 350;
+  font-size: small;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.promo-title{
+    margin-top: 80px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  padding: 7px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.form-control:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#quantity-container {
+  display: flex;
+  align-items: center;
+}
+
+#quantity {
+  font-size: 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  width: 50%; 
+  margin-top: 40px; 
+  margin-right: 350px; 
+  margin-bottom: 15px; 
+  margin-left: -140px;
+}
+
+.trash-link {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: -65px;
+  margin-right: 200px;
+}
+
+.fa-trash-can {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+/* Button Styles */
+button.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #242424;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+button.apply{
+  padding: 4px 17px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #242424;
+  color: #fff;
+  cursor: pointer;
+  width: 20%;
+  margin-left: 230px;
+  margin-top: -72px
+}
+button.btn:hover {
+  background-color: #03645f;
+}
+
+button.btn:active {
+  background-color: #03645f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+.checkout{
+    margin-bottom: 150px;
+}
 /* *FOOTER*/
 
 .footer{
@@ -264,10 +365,10 @@ body {
     background: black;
     color: white;
     padding: 10px 0;
-    position: absolute; /* Change this line */
-    bottom: 0; /* Add this line */
-    left: 0; /* Add this line */
-    width: 100%; /* Add this line */
-    text-align: center; /* Add this line */
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    text-align: center; 
     font-size: 16px;
 }

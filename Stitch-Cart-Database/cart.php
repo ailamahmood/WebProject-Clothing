@@ -1,31 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cloth";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove'])) {
+    $id = $_POST['id'];
+
+    // Find the product in the cart
+    foreach ($_SESSION['cart'] as $key => $item) {
+        if ($item['ID'] == $id) {
+            // Increase quantity in the database
+            $stmt = $conn->prepare("UPDATE clothes SET Quantity = Quantity + ? WHERE ID = ?");
+            $stmt->bind_param("ii", $item['quantity'], $id);
+            $stmt->execute();
+
+            // Remove product from cart session
+            unset($_SESSION['cart'][$key]);
+            break;
+        }
+    }
+
+    // If the cart is empty, unset the cart session
+    if (empty($_SESSION['cart'])) {
+        unset($_SESSION['cart']);
+    }
+
+    header("Location: cart.php");
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html>
 <head>
+    <title>Shopping Cart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Contact</title>
 
     <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!--FONT AWESOME LIBRARY-->
+
+    <!--Font Awesome library-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!--ABOUT CSS-->
-    <link rel="stylesheet" href="About.css">
-    <!--JQUERY LIBRARY-->
+    <!--css-->
+    <link rel="stylesheet" href="cart.css">
+    <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!--BOOTSTRAP CSS-->
+
+    <!--Bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <!--ABOUT js-->
-    <script src="About.js"></script>
-
+    <!--js-->
+    <script src="Shopping-Cart.js"></script>
 </head>
-
-
 <body>
+
     <!-- NAVIGATION BAR-->
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
         <div class="container-fluid">
@@ -63,7 +105,7 @@
                         <a class="nav-link" href="../ContactUs/Contact.php">CONTACT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../About/About.html">ABOUT</a>
+                        <a class="nav-link" href="../About/About.html">ABOUT</a>
                     </li>
 
                 </ul>
@@ -80,113 +122,93 @@
         </div>
     </nav>
 
-    <!--CONTENT HEADING-->
-    <div class="content">
-        <div class="content-box">
-            <h1>About Bazeena</h1>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">My Bag</h3>
         </div>
     </div>
+    <?php
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+        $total = 0;
+        foreach ($_SESSION['cart'] as $item) {
+            echo "<div class='row'>";
+            echo "<div class='col-md-8 col-sm-12'>";
+            echo "<div class='card'>";
+            echo "<div class='card-body'>";
+            echo "<div class='row'>";
+            echo "<div class='col-md-4 col-sm-12'>";
+            echo "<img src='" . htmlspecialchars($item["Image"]) . "' alt='" . htmlspecialchars($item["Name"]) . "' class='img-fluid'>";
+            echo "</div>";
+            echo "<div class='col-md-8 col-sm-12'>";
+            echo "<p>" . htmlspecialchars($item["Name"]) . "</p>";
+            echo "<h5>Price: PKR" . htmlspecialchars($item["Price"]) . "</h5>";
+            echo "<p>Quantity: " . htmlspecialchars($item["quantity"]) . "</p>";
+            echo "<p>Subtotal: PKR" . (htmlspecialchars($item["Price"]) * htmlspecialchars($item["quantity"])) . "</p>";
+            echo "<form method='post' action='cart.php'>";
+            echo "<input type='hidden' name='id' value='" . htmlspecialchars($item["ID"]) . "' />";
+            echo "<button type='submit' name='remove' class='btn btn-primary'>Remove from Cart</button>
+                </form>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>";
 
-    <!--ABOUT US-->
-    <div class="about">
-        <p>At Bazeena Clothing, we're not just about fashion; we're about empowering individuals to express their unique
-            style and confidence. With a passion for quality craftsmanship and timeless designs, we strive to redefine
-            elegance for the modern era. <br><br>Each stitch in our garments tells a story of dedication to
-            craftsmanship and a
-            commitment to providing clothing that not only looks good but also feels good. From our curated collections
-            to our personalized service, we aim to inspire and elevate your wardrobe, one garment at a time.
-            <br><br>Join us on
-            this journey of self-expression and discover the beauty of individuality with Bazeena Clothing.
-        </p>
-    </div>
+            $total += $item["Price"] * $item["quantity"];
+        }
 
-    <!--TEAM MEMBERS-->
-    <div class="container text-center">
-        <h1>Our Team</h1>
-        <div class="row">
-            <div class="col">
-                <img src="images/team1.jpg" width="200" height="200" alt="team member">
+        echo "<div class='row'>
+        <div class='col-md-4 col-sm-12'>
+            <div class='row'>
+                <div class='col-12'>
+                    <h5 class='promo-title'>Promo Code</h5>
+                    <form>
+                        <div class='form-group'>
+                            <input type='text' class='form-control' placeholder='Enter Promo Code'>
+                            <button type='submit' class='btn btn-primary apply'>Apply</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col">
-                <img src="images/team2.jpg" width="200" height="200" alt="team member">
-            </div>
-            <div class="col">
-                <img src="images/team3.jpg" width="200" height="200" alt="team member">
+            <div class='row'>
+                <div class='col-12'>
+                    <h4>Order Summary</h4>
+                    <table class='table'>
+                        <tbody>
+                            <tr>
+                                <td>Total:</td>
+                                <td>PKR $total</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type='submit' class='btn btn-primary checkout'>Proceed to Checkout</button>
+                </div>
             </div>
         </div>
+    </div>";
 
-        <div class="row">
-            <div class="col">
-                <h5>Aila Mahmood</h5>
-            </div>
-            <div class="col">
-                <h5>Jaweria Amir</h5>
-            </div>
-            <div class="col">
-                <h5>Farwa Attaria</h5>
-            </div>
+    } else {
+        echo "<div class='row'>
+        <div class='col-12'>
+        <p>Your cart is empty.</p>
         </div>
+        </div>";
+    }
+    ?>
+</div>
 
-        <div class="row">
-            <div class="col">
-                <label>CEO/Founder<br>Visionary Leader</label>
-            </div>
-            <div class="col">
-                <label>Marketing Head<br>Brand Architect</label>
-            </div>
-            <div class="col">
-                <label>Sales Head<br>Revenue Driver</label>
-            </div>
-        </div>
-        <button id="animateTeam">Animate Team</button>
 
-    </div>
 
-    <!--OUR SERVICES-->
-    <div class="container text-center our-services-box">
-        <h1>Our Services</h1>
-
-        <div class="row our-services-item">
-            <div class="col our-services-icon">
-                <i class="fa-regular fa-user"></i>
-            </div>
-            <div class="col our-services-icon">
-                <i class="fa-regular fa-credit-card"></i>
-            </div>
-            <div class="col our-services-icon">
-                <i class="fa-regular fa-dollar-sign"></i>
-            </div>
-        </div>
-
-        <div class="row our-services-item">
-            <div class="col our-services-body">
-                <h5>24/7 Customer Review</h5>
-                <label>Never stuck!<br> Our friendly support is available 24/7</label>
-            </div>
-            <div class="col our-services-body">
-                <h5>Secure Payment</h5>
-                <label>Pay worry-free.<br> Secure payments keep your info safe</label>
-
-            </div>
-            <div class="col our-services-body">
-                <h5>Return Guarantee</h5>
-                <label>Didn't love it?<br> Hassle-free returns, guaranteed</label>
-            </div>
-        </div>
-        <BR>
-        <button id="animateServices">Animate Services</button>
-
-    </div>
-
-    <!--FOOTER-->
-    <div class="footer">
+        <!--FOOTER-->
+        <div class="footer">
         <div class="footer-box">
             <div class="footer-i f1">
                 <h5>Contact</h5>
-                <label>Sector: 4 Jinnah Avenue, F 8/4 F-8</label><br>
+                <label>4 Jinnah Avenue, F 8/4 F-8</label><br>
                 <label>City: Islamabad</label><br>
                 <label>Country: Pakistan</label><br>
-                <label>Zip Code: 44220</label><br>
+                <label>Zip Code:  44220</label><br>
                 <label>Phone: 051-3719183</label><br>
             </div>
 
@@ -222,5 +244,5 @@
     </div>
 
 </body>
-
 </html>
+

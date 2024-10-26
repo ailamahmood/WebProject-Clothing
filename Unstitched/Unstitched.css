@@ -82,91 +82,150 @@ body {
     --bs-btn-focus-shadow-rgb: 25, 135, 84;
     --bs-btn-active-color: black;
     --bs-btn-active-bg: white;
-    --bs-btn-active-border-color: white;
-}
+    --bs-btn-active-border-color: white;}
 
-/* *INTERFACE*/
-
-.content {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    flex-direction: column;
-    background-image: url("images/main-image.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.content-box {
-    position: relative;
-    margin-top: 32%;
-}
-
-.content-box h1{
+/*Main*/
+.container {
+    margin-top: 30px;
+  }
+  
+  h2 {
+    text-align: center;
     font-size: 36px;
-    margin-top: 150px;
+    margin-top: 5px;
+    margin-bottom: 20px; 
     color: #333;
-    background: hsl(0, 0%, 100%);
-    text-align: center;
-}
+  }
+  
+  .filters {
+    display: flex;
+    align-items: center;
+    margin-bottom: -5px;
+  }
+  
+  .filters label {
+    margin-right: 10px;
+  }
+  
+  .form-control {
+    flex-grow: -0.5;
+    margin-right: 10px;
+    width: 15%;
+  }
+  .displayed {
+    margin-left: 10px;
+  }
+  .container-row{
+    margin: 40px;
+  }
+  .Fab {
+    margin-left: 570px;
+    text-decoration: none;
+    position: relative;
+    color: #000000; /* Enable relative positioning for the underline */
+  }
+  
+  .Fab:after { /* Create the underline effect */
+    content: "";
+    width: 80%; /* Span the entire width of the element */
+    height: 1px; /* Set the underline height */
+    bottom: 0; /* Position the underline at the bottom */
+    left: 5%;
+    background-color:  rgb(3, 113, 117);/* Set underline color */
+    opacity: 0; /* Initially hide the underline */
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+    position: absolute;
+  }
+  
+  .Fab:hover:after, /* Show underline on hover */
+  .Fab.active:after { /* Show underline on active state */
+    opacity: 1; /* Make the underline visible */
+  }
+  
+  .card {
+    position: relative;
+    transition: transform .3s;
+  }
 
-.about{
-    line-height: 1.5;
-    color: #666;
-    font-size: 20px;
-    color: #333;
-    padding-left: 150px;
-    padding-right: 150px;
-    text-align: center;
-    margin-top: 100px;
-}
+  .img-hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    transition: opacity .3s;
+  }
+  
+  .card:hover .card-img-top {
+    opacity: 1.0;
+  }
+  
+  .card .img-hover{
+    position: absolute;
+    width: 100%;
+    height: 81.5%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .1s;
+  }
+  
+  .card:hover .img-hover{
+    opacity: 1;
+  }
 
-/*TEAM MEMBER GRID*/
+  .card-body {
+    padding:5px;
+  }
 
-.container h1{
-    padding-top: 50px;
-}
+  .btn {
+    position: absolute;
+    top: 5%; /* Center vertically */
+    left: 90%; /* Center horizontally */
+    transform: translate(-50%, -50%);  /* Adjust positioning if needed */
+    background-color: rgba(51, 51, 51, 0.5);
+    border: #333;
+    color: #fff;
+  }
+  .btn:hover {
+    background-color: rgba(255, 254, 254, 0.5);
+    color: #000000;
+  }
+  
+  .cart{
+    top: 96%; /* Center vertically */
+    left: 90%; /* Center horizontally */
+    background-color: rgba(207, 207, 207, 0.8);
+    border: #333;
+    color: #1d1d1d;
+  }
+  .cart:hover {
+    background-color: rgba(0, 64, 70, 0.9);
+    color: #ffffff;
+  }
 
-.container h5{
-    padding: 10px;
-    font-weight: 400;
-}
-
-.container label{
-    color: #3b3b3b;
-    font-weight: 300;
-    font-size: 15px;
-}
-
-.container button{
-    padding: 10px;
-    display: block;
-    margin: 50px auto;
-    background: rgba(39, 39, 39, 0.815);
-    color:white;
-    font-weight: 500;
-    border-radius: 5px;
-    margin-top: 25px;
-}
-
-.container button:hover{
-    background: rgb(0, 89, 95);
-    color:rgba(255, 255, 255, 0.9);
-}
-
-/*SERVICES*/
-.our-services-box .our-services-item .our-services-icon{
-    font-size: 35px;
-    color: rgb(22, 22, 22);
-    transition: all .4s ease-in-out;
-    margin-top: 27px;
-    margin-bottom: 15px;
-}
-
+  .card-title {
+    font-size: 1.0rem;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  
+  .card-text {
+    font-size: 0.85rem;
+    text-align: left;
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .card-text strong {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #003a32;
+    text-align: left;
+  }
+  
 /* *FOOTER*/
 
 .footer{

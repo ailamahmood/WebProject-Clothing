@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'sendemail.php'; ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Contact</title>
 
     <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!--FONT AWESOME LIBRARY-->
+
+    <!--Font Awesome library-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!--ABOUT CSS-->
-    <link rel="stylesheet" href="About.css">
-    <!--JQUERY LIBRARY-->
+    <!--css-->
+    <link rel="stylesheet" href="contact.css">
+    <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!--BOOTSTRAP CSS-->
+
+    <!--Bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <!--ABOUT js-->
-    <script src="About.js"></script>
+    <!--js-->
+   
 
 </head>
+  <body>
 
+    <!--alert messages start-->
+    <?php echo isset($alert) ? $alert : ''; ?>
+    <!--alert messages end-->
 
-<body>
     <!-- NAVIGATION BAR-->
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" data-bs-theme="light">
         <div class="container-fluid">
@@ -60,10 +64,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../ContactUs/Contact.php">CONTACT</a>
+                        <a class="nav-link active" href="../ContactUs/Contact.php">CONTACT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../About/About.html">ABOUT</a>
+                        <a class="nav-link" href="../About/About.html">ABOUT</a>
                     </li>
 
                 </ul>
@@ -79,103 +83,48 @@
             </div>
         </div>
     </nav>
-
-    <!--CONTENT HEADING-->
-    <div class="content">
-        <div class="content-box">
-            <h1>About Bazeena</h1>
-        </div>
+    
+    <!--CONTACT FORMS-->
+    <div class="text-center page-width page-width--narrow">
+        <div class="intro">
+            <h2>Get in touch</h2>
+            <div class="text rte">
+                <p>Connect with the passionate team of Bazeena. We're here to help you find the pieces that make you feel 
+                    confident and ready to take on the world!
+                </p>
+            </div>
+        </div>   
     </div>
+    <h2 class="contactUs">Contact Us</h2>
+    <section class="ftco-section contact-bg">
+        <div class="contact-wrap">
+            <div id="form-message-warning"></div>
+            <div id="form-message-success">Your message was sent, thank you!</div>
 
-    <!--ABOUT US-->
-    <div class="about">
-        <p>At Bazeena Clothing, we're not just about fashion; we're about empowering individuals to express their unique
-            style and confidence. With a passion for quality craftsmanship and timeless designs, we strive to redefine
-            elegance for the modern era. <br><br>Each stitch in our garments tells a story of dedication to
-            craftsmanship and a
-            commitment to providing clothing that not only looks good but also feels good. From our curated collections
-            to our personalized service, we aim to inspire and elevate your wardrobe, one garment at a time.
-            <br><br>Join us on
-            this journey of self-expression and discover the beauty of individuality with Bazeena Clothing.
-        </p>
-    </div>
+            <form action="" method="POST" id="contactForm" name="contactForm" class="contactForm">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <label for="message">Message</label>
+                <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message" required></textarea>
 
-    <!--TEAM MEMBERS-->
-    <div class="container text-center">
-        <h1>Our Team</h1>
-        <div class="row">
-            <div class="col">
-                <img src="images/team1.jpg" width="200" height="200" alt="team member">
-            </div>
-            <div class="col">
-                <img src="images/team2.jpg" width="200" height="200" alt="team member">
-            </div>
-            <div class="col">
-                <img src="images/team3.jpg" width="200" height="200" alt="team member">
-            </div>
+                <input type="submit" name="submit" value="Send Message" class="btn btn-primary">
+                <div class="submitting"></div>
+            </form>
         </div>
+    </section> 
 
-        <div class="row">
-            <div class="col">
-                <h5>Aila Mahmood</h5>
-            </div>
-            <div class="col">
-                <h5>Jaweria Amir</h5>
-            </div>
-            <div class="col">
-                <h5>Farwa Attaria</h5>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label>CEO/Founder<br>Visionary Leader</label>
-            </div>
-            <div class="col">
-                <label>Marketing Head<br>Brand Architect</label>
-            </div>
-            <div class="col">
-                <label>Sales Head<br>Revenue Driver</label>
-            </div>
-        </div>
-        <button id="animateTeam">Animate Team</button>
-
-    </div>
-
-    <!--OUR SERVICES-->
-    <div class="container text-center our-services-box">
-        <h1>Our Services</h1>
-
-        <div class="row our-services-item">
-            <div class="col our-services-icon">
-                <i class="fa-regular fa-user"></i>
-            </div>
-            <div class="col our-services-icon">
-                <i class="fa-regular fa-credit-card"></i>
-            </div>
-            <div class="col our-services-icon">
-                <i class="fa-regular fa-dollar-sign"></i>
-            </div>
-        </div>
-
-        <div class="row our-services-item">
-            <div class="col our-services-body">
-                <h5>24/7 Customer Review</h5>
-                <label>Never stuck!<br> Our friendly support is available 24/7</label>
-            </div>
-            <div class="col our-services-body">
-                <h5>Secure Payment</h5>
-                <label>Pay worry-free.<br> Secure payments keep your info safe</label>
-
-            </div>
-            <div class="col our-services-body">
-                <h5>Return Guarantee</h5>
-                <label>Didn't love it?<br> Hassle-free returns, guaranteed</label>
-            </div>
-        </div>
-        <BR>
-        <button id="animateServices">Animate Services</button>
-
+    <!-- Social icons section -->
+    <h2 class="socials">Follow On</h2>
+    <div class="social-media-icons">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-linkedin"></i>
     </div>
 
     <!--FOOTER-->
@@ -183,10 +132,10 @@
         <div class="footer-box">
             <div class="footer-i f1">
                 <h5>Contact</h5>
-                <label>Sector: 4 Jinnah Avenue, F 8/4 F-8</label><br>
+                <label>4 Jinnah Avenue, F 8/4 F-8</label><br>
                 <label>City: Islamabad</label><br>
                 <label>Country: Pakistan</label><br>
-                <label>Zip Code: 44220</label><br>
+                <label>Zip Code:  44220</label><br>
                 <label>Phone: 051-3719183</label><br>
             </div>
 
@@ -220,7 +169,13 @@
             &copy; 2024 Bazeena - All rights reserved
         </div>
     </div>
+    <!--contact section end-->
 
-</body>
+    <script type="text/javascript">
+    if(window.history.replaceState){
+      window.history.replaceState(null, null, window.location.href);
+    }
+    </script>
 
+  </body>
 </html>

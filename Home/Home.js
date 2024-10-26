@@ -38,24 +38,6 @@ $(document).ready(function () {
     });
 });
 
-
-//GET EMAIL
-
-$(document).ready(function () {
-    $("#emailButton").click(function () {
-        var emailAddress = $(".footer-i.f3 input[type='email']").val();    // Get the email address
-
-        if (emailAddress.includes("@")) {
-            alert("Email address: " + emailAddress + " has been submitted!");
-        } else {
-            alert("Invalid email address! Please enter a valid email address.");
-        }
-
-        $(".footer-i.f3 input[type='text']").val('');       // Clear after submission
-    });
-});
-
-
 //MODAL IMAGE
 
 $(document).ready(function () {
@@ -94,18 +76,19 @@ $(document).ready(function () {
 });
 
 
-//EVENT HANDLING ON DISCOUNT NEWS
+
+//GET EMAIL
 
 $(document).ready(function () {
-    $('.discount-news').mouseenter(function () {
-        $(this).css({
-            'background-color': 'rgba(0, 0, 0, 0.404)', 
-            'color': 'white' 
-        });
-    }).mouseleave(function () {
-        $(this).css({
-            'background-color': 'rgba(255, 255, 255, 0.986)', 
-            'color': 'black' 
-        });
+    $("#emailButton").click(function () {
+        var emailAddress = $(".footer-i.f3 input[type='email']").val();    // Get the email address
+
+        if (emailAddress.includes("@")) {
+            alert("Email address: " + emailAddress + " has been submitted!");
+        } else {
+            alert("Invalid email address! Please enter a valid email address.");
+        }
+
+        $(".footer-i.f3 input[type='text']").val('');       // Clear after submission
     });
 });

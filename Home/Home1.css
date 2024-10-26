@@ -82,93 +82,201 @@ body {
     --bs-btn-focus-shadow-rgb: 25, 135, 84;
     --bs-btn-active-color: black;
     --bs-btn-active-bg: white;
-    --bs-btn-active-border-color: white;
+    --bs-btn-active-border-color: white;}
+
+.btn{
+    margin-left: -20px;
 }
 
-/* *INTERFACE*/
+/*CAROUSEL*/
 
-.content {
+.carousel{
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.carousel-item img{
+    height: 593px;
+
+}
+
+.carousel-caption {
+    /*text-shadow: 2px 2px 2px black;*/
+    background-color: rgba(0, 0, 0, 0.25);
+    margin-bottom: 60px;
+    width: 100%;
+    margin-left: -200px;
+    font-family: "Ysabeau Office", sans-serif;
+    font-weight: light;
+    font-style: normal;
+}
+
+.carousel-caption h1{
+    font-weight: 220;
+    margin-bottom: 10px;
+}
+
+.carousel-caption h5{
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.685);
+}
+
+.carousel-caption button{
+    font-weight: 550;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.815);
+    color:white;
+}
+
+.carousel-caption button:hover{
+    background: rgb(255, 255, 255);
+    font-weight: 600;
+    color:black;
+}
+
+/*MODAL IMAGE*/
+.modal-content img {
+    width: 100%;
+}
+
+.modal-dialog {
+    max-width: 90%;       /* Adjust the maximum width of the modal */
+}
+
+/*WELCOME TOGGLE BUTTON*/
+.welcome{
+    margin: 80px 0 130px 0;
+}
+
+.welcome button{
+
+    display: block;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.815);
+    color:white;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px black;
+    
+}
+
+.welcome p{
+    width: 40%; /* Adjust the width as needed */
+    margin: 0 auto; 
+    padding: 10px; /* Add some padding for spacing */
+    border: 1px solid rgba(0, 0, 0, 0.37); /* Add border for the box */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    color: black;
+    text-align: justify;
+}
+
+/* *POPULAR PRODUCTS AND MOST-RATED PRODUCTS*/
+
+.products-title {
+    margin-top: 50px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: -40px;
+}
+
+.products-items {
     display: flex;
-    position: relative;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    flex-direction: column;
-    background-image: url("images/main-image.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    flex-wrap: wrap;
 }
 
-.content-box {
-    position: relative;
-    margin-top: 32%;
+.products-item {
+    padding: 30px;
+    margin: 30px 0px 380px 0px;     /*top right bottom left*/
+    height: 300px;
 }
 
-.content-box h1{
-    font-size: 36px;
-    margin-top: 150px;
-    color: #333;
-    background: hsl(0, 0%, 100%);
-    text-align: center;
+.products-image img {
+    width: 290px;
+    height: 420px;
 }
 
-.about{
-    line-height: 1.5;
-    color: #666;
-    font-size: 20px;
-    color: #333;
-    padding-left: 150px;
-    padding-right: 150px;
-    text-align: center;
-    margin-top: 100px;
+.products-body {
+    margin-top: 15px;
 }
 
-/*TEAM MEMBER GRID*/
-
-.container h1{
-    padding-top: 50px;
-}
-
-.container h5{
-    padding: 10px;
-    font-weight: 400;
-}
-
-.container label{
-    color: #3b3b3b;
-    font-weight: 300;
-    font-size: 15px;
-}
-
-.container button{
-    padding: 10px;
-    display: block;
-    margin: 50px auto;
-    background: rgba(39, 39, 39, 0.815);
-    color:white;
+.products-body h6 {
     font-weight: 500;
-    border-radius: 5px;
-    margin-top: 25px;
+    margin-bottom: 5px;
+    color: black;
+    text-decoration: underline #d3d3d3;
 }
 
-.container button:hover{
-    background: rgb(0, 89, 95);
-    color:rgba(255, 255, 255, 0.9);
+ .popular-products-body h6:hover{
+    text-decoration: underline black;
 }
 
-/*SERVICES*/
-.our-services-box .our-services-item .our-services-icon{
-    font-size: 35px;
-    color: rgb(22, 22, 22);
-    transition: all .4s ease-in-out;
-    margin-top: 27px;
-    margin-bottom: 15px;
+ .price label {
+    font-size: 15px;
+    color: black;
 }
 
-/* *FOOTER*/
+ .price label.sale {
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: line-through;
+    color: rgb(85, 84, 84);
+}
 
+ .rate-icons i {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/*eid and about*/
+.eid{
+    margin-top: -120px;
+}
+.eid img {
+    width: 82%; /* Adjust the percentage as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 120px;
+}
+
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    margin-right: 120px;
+    margin-left: -30px;
+    margin-top: -130px;
+    margin-bottom: 80px;
+  }
+  h4{
+    font-weight: 500;
+    margin-top: -120px;
+    margin-bottom: 20px;
+    margin-left: 130px;
+  }
+
+  label {
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f3f3f3;
+    color: black;
+  }
+  .button{
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #f5f5f5;
+    color: black;
+    border-color: rgb(212, 212, 212);
+    border-radius: 7px;
+    margin-left: 215px;
+  }
+
+/*footer*/
 .footer{
     padding: 30px 50px;
     background: rgba(10, 10, 10, 0.9);
@@ -181,7 +289,7 @@ body {
     justify-content: center;
     background: rgba(0, 0, 0, 0);   
     flex-wrap: wrap;
-
+    margin-left: -85px;
 }
 
 .footer-box .footer-i{
